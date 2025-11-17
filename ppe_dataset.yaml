@@ -1,0 +1,21 @@
+train: assets/dataset/train
+val: assets/dataset/valid
+
+nc: 14
+names:
+  [
+    "Fall-Detected",
+    "Gloves",
+    "Goggles",
+    "Hardhat",
+    "Ladder",
+    "Mask",
+    "NO-Gloves",
+    "NO-Goggles",
+    "NO-Hardhat",
+    "NO-Mask",
+    "NO-Safety Vest",
+    "Person",
+    "Safety Cone",
+    "Safety Vest",
+  ]
