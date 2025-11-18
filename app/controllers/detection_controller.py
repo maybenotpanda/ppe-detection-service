@@ -12,7 +12,7 @@ from app.controllers import log_controller
 def random_id(length=5):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
 
-async def handle_upload(file: UploadFile, db):
+async def handle_upload(file: UploadFile, user: str, db):
 
     try:
         UPLOAD_DIR = settings.UPLOAD_DIR
@@ -53,6 +53,7 @@ async def handle_upload(file: UploadFile, db):
 
         response = log_controller.create(
             db=db,
+            user=user,
             filename=filename,
             result_image=result_final_path,
             alert=alert

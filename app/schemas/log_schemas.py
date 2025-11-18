@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from datetime import datetime
 
 class DetectionCreate(BaseModel):
+    user: str
     filename: str
     result_image: str
     alert: str

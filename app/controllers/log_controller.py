@@ -4,9 +4,10 @@ from sqlalchemy.orm import Session
 from app.models.logs import Logs
 from app.schemas import log_schemas
 
-def create(db: Session, filename: str, result_image: str, alert: str):
+def create(db: Session, user: str, filename: str, result_image: str, alert: str):
     try:
         log_data = Logs(
+            user=user,
             filename=filename,
             result_image=result_image,
             alert=alert
