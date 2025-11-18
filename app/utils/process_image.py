@@ -4,7 +4,7 @@ import os
 import numpy as np
 
 model = YOLO("best.pt")
-print(model.names)
+# print(model.names)
 
 def process_image(file_path):
     results = model.predict(file_path, verbose=False)[0]
@@ -12,7 +12,7 @@ def process_image(file_path):
     if img is None:
         raise FileNotFoundError(f"File {file_path} tidak ditemukan atau gagal dibaca.")
 
-    alert = "Oke"
+    alert = "success"
 
     for box in results.boxes:
         xyxy = box.xyxy.cpu().numpy().flatten()
