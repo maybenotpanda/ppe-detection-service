@@ -46,7 +46,7 @@ async def handle_upload(file: UploadFile, db):
             yolo_output_path, alert = process_image(file_path)
 
             result_filename = f"result_{timestamp}_{result_rand}.jpg"
-            result_final_path = os.path.join(RESULT_DIR, result_filename)
+            result_final_path = os.path.join(result_filename)
 
             if os.path.exists(yolo_output_path):
                 os.replace(yolo_output_path, result_final_path)
