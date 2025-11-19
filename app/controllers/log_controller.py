@@ -1,5 +1,6 @@
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy import desc
 
 from app.models.logs import Logs
 from app.schemas import log_schemas
@@ -33,7 +34,7 @@ def create(db: Session, user: str, filename: str, result_image: str, alert: str)
 
 def get_list(db: Session):
     try:
-        detections = db.query(Logs).all()
+        detections = db.query(Logs).order_by(desc(Logs.created_at)).all()
 
         return {
             "status": "success",
